@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTER</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    form{
+        margin:100px 400px;
+        align:center;
+    }
+    </style>
+</head>
+<body>
+    <form method="post" action="register">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Enter Your Username"><br>
+        <input type="text" name="first_name" placeholder="Enter Your First Name"><br>
+        <input type="text" name="last_name" placeholder="Enter Your Last Name"><br>
+        <input type="email" name="email" placeholder="Email Address"><br>
+        <input type="password" name="password" placeholder="Enter Your Password"><br>
+        <input type="password" name="password1" placeholder="Confirm Your Password"><br>
+        <input type="submit">
+    </form>
+{%for msg in messages%}
+{{msg}}
+{%endfor%}
+</body>
+</html>
